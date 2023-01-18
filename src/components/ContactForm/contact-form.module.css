@@ -1,0 +1,17 @@
+.contactsForm {
+  padding: 20px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+.contactsWrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.contactsLabel {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}

@@ -1,0 +1,14 @@
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+.contactItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactItem:not(:last-child) {
+  margin-bottom: 5px;
+}
