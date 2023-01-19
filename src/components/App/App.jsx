@@ -15,7 +15,7 @@ class App extends Component {
 
   componentDidMount() {
     const contacts = JSON.parse(localStorage.getItem('contacts'));
-    this.setState({ contacts });
+    this.setState({ contacts: contacts || [] });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -30,12 +30,12 @@ class App extends Component {
       name,
       number,
     };
+
     const normalizedName = name.toLowerCase();
     const findeName = this.state.contacts.some(contact =>
       contact.name.toLowerCase().includes(normalizedName)
     );
-
-    if (this.state.contacts.length > 0 && findeName) {
+    if (findeName) {
       return alert(`${name} is already in contacts.`);
     }
 
@@ -57,13 +57,9 @@ class App extends Component {
 
   filterContacts = () => {
     const normalizedFilter = this.state.filter.toLowerCase();
-    if (this.state.contacts > 0) {
-      return this.state.contacts.filter(contact =>
-        contact.name.toLowerCase().includes(normalizedFilter)
-      );
-    } else {
-      return [];
-    }
+    return this.state.contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter)
+    );
   };
 
   render() {
