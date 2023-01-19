@@ -15,3 +15,16 @@
   flex-direction: column;
   row-gap: 5px;
 }
+
+.contactsBtn {
+  padding: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 250ms linear, color 250ms linear;
+}
+
+.contactsBtn:hover {
+  background-color: rgba(27, 122, 27, 0.8);
+  color: #fff;
+}

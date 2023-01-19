@@ -55,7 +55,9 @@ class ContactForm extends Component {
               onChange={this.handleChange}
             />
           </label>
-          <button type="submit">Add contact</button>
+          <button type="submit" className={styles.contactsBtn}>
+            Add contact
+          </button>
         </div>
       </form>
     );

@@ -7,8 +7,21 @@
 .contactItem {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.contactItem:not(:last-child) {
+/* .contactItem:not(:last-child) {
   margin-bottom: 5px;
+} */
+
+.contactBtn {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  transition: fill 250ms linear;
+}
+
+.contactBtn:hover {
+  fill: rgba(255, 0, 0, 0.8);
 }
