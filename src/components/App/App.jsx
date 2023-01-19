@@ -64,17 +64,25 @@ class App extends Component {
 
   render() {
     const filtredContacts = this.filterContacts();
+    const { contacts, filter } = this.state;
+
     return (
       <div className={styles.container}>
         <h1 className={styles.title}>Phonebook</h1>
         <ContactForm title={'Phonebook'} onSubmit={this.addContact} />
         <h2 className={styles.subTitle}>Contacts</h2>
         <div className={styles.contactListWrap}>
-          <Filter value={this.state.filter} onChange={this.changeFilter} />
-          <ContactList
-            contacts={filtredContacts}
-            onDeleteContact={this.deleteContact}
-          />
+          {contacts.length === 0 ? (
+            <p>There is no contacts in your list.</p>
+          ) : (
+            <>
+              <Filter value={filter} onChange={this.changeFilter} />
+              <ContactList
+                contacts={filtredContacts}
+                onDeleteContact={this.deleteContact}
+              />
+            </>
+          )}
         </div>
       </div>
     );
