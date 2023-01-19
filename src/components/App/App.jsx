@@ -35,7 +35,7 @@ class App extends Component {
       contact.name.toLowerCase().includes(normalizedName)
     );
 
-    if (findeName) {
+    if (this.state.contacts.length > 0 && findeName) {
       return alert(`${name} is already in contacts.`);
     }
 
